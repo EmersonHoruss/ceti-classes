@@ -1,0 +1,22 @@
+*** DEVELOPED PROJECTS ***
+*** Vanilla ***
+JS    -> portfolio    -> https://github.com/EmersonHoruss/My-portfolio.git
+ 
+*** Frontend ***
+React     -> tic-tac-toe     -> https://github.com/EmersonHoruss/tic-tac-toe-teaching-ceti.git
+Angular -> store    -> https://github.com/EmersonHoruss/Store-App-CETI-Class.git
+ 
+*** Backend ***
+Express    -> store    -> https://github.com/EmersonHoruss/store-app-ceti-backend.git
+ 
+Steps
+1.- go to link
+2.- click on <> Code 
+3.- download Zip or downloand using git clone link
+4.- go into the downloaded project then open your terminal and type npm i to install all dependencies
+
+
+
+Lista de descargas
+Cambios pequeños
+crud react

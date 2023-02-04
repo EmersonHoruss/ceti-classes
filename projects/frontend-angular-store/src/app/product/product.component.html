@@ -1,0 +1,33 @@
+<app-layout [layout]="layout">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z2 w-full">
+    <ng-container
+      *ngFor="let keyColumn of keyColumns"
+      [matColumnDef]="keyColumn"
+    >
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        sortActionDescription="Sort by symbol"
+      >
+        {{ matchColumn(keyColumn) }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="keyColumn !== 'Add'">
+          {{ element[keyColumn] }}
+        </div>
+        <button
+          *ngIf="keyColumn === 'Add'"
+          mat-mini-fab
+          color="primary"
+          class="store-ceti-button"
+          (click)="openAddProductModal(element)"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="keyColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: keyColumns"></tr>
+  </table>
+</app-layout>
