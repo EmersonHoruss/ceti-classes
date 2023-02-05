@@ -13,7 +13,7 @@ export default {
     }
   },
 
-  read: async (req, res) => {
+  get: async (req, res) => {
     try {
       const _entities = await ProductModel.get()
       return res.json(_entities);
@@ -25,7 +25,7 @@ export default {
   addStock: async (req, res) => {
     try {
       const { _id, _addedAmount } = req.body;
-
+      
       const _savedEntity = await ProductModel.addStock(_id, _addedAmount);
 
       res.json(_savedEntity);

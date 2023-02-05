@@ -19,6 +19,6 @@ app.use(express.urlencoded({ extended: false }));
 
 //routes
 app.use("/product", routes.product);
-// app.use("/sell", routes.sell)
+app.use("/sell", routes.sell)
 
 export default app;

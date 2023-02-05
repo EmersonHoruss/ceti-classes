@@ -7,7 +7,7 @@ const router = Router();
 router.post("/", _controller.create);
 
 // Read
-router.get("/", _controller.read);
+router.get("/", _controller.get);
 
 // Add Stock
 router.put("/addStock", _controller.addStock)

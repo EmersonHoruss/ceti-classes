@@ -16,9 +16,8 @@ export const ProductModel = {
   },
 
   async addStock(_id, _addedAmount) {
-    const _product = await this.getOne(_id)
-
-    const _amount = _product._amount + _addedAmount
+    const _product = await ProductSchema.findById(_id)
+    const _amount = _product._amount + parseInt(_addedAmount)
 
     return await ProductSchema.findByIdAndUpdate(
       _id,
@@ -28,21 +27,9 @@ export const ProductModel = {
   },
 
   async subtractStock(_id, _subtractedAmount) {
-    const _product = await this.getOne(_id)
+    const _product = await ProductSchema.findById(_id)
 
-    const _amount = _product._amount - _subtractedAmount
-
-    return await ProductSchema.findByIdAndUpdate(
-      _id,
-      { $set: { _amount } },
-      { new: true }
-    );
-  },
-
-  async Stock(_id, _addedAmount) {
-    const _product = await this.getOne(_id)
-
-    const _amount = _product._amount + _addedAmount
+    const _amount = _product._amount - parseInt(_subtractedAmount)
 
     return await ProductSchema.findByIdAndUpdate(
       _id,
